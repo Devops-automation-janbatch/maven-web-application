@@ -1,5 +1,6 @@
 node{
 def mavenHome = tool name: "maven3.8.4"
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '', daysToKeepStr: '', numToKeepStr: '5')), [$class: 'JobLocalConfiguration', changeReasonComment: '']])
 //Checkout Stage
 stage( 'checkoutCode'){
 git branch: 'development', credentialsId: 'f5f1c6e6-e02a-473f-89bd-9f5afd1ffdcf', url: 'https://github.com/Devops-automation-janbatch/maven-web-application.git'
